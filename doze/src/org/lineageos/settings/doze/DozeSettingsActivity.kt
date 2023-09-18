@@ -7,15 +7,17 @@ package org.lineageos.settings.doze
 
 import android.os.Bundle
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
-import com.android.settingslib.widget.R
 
 class DozeSettingsActivity : CollapsingToolbarBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.content_frame, DozeSettingsFragment(), TAG)
-            .commit()
+            .replace(
+                com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                DozeSettingsFragment(),
+                TAG
+            ).commit()
     }
 
     companion object {
