@@ -3,11 +3,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-ifeq ($(SEPOLICY_PATH), device/qcom/sepolicy_vndr/legacy-um)
-    SEPOLICY_PLATFORM := legacy-um
-else
-    SEPOLICY_PLATFORM := um
-endif
+
+SEPOLICY_PLATFORM := $(subst device/qcom/sepolicy_vndr/,,$(SEPOLICY_PATH))
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/oplus/sepolicy/qti/vendor \
