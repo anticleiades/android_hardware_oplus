@@ -6,3 +6,5 @@
 BOARD_VENDOR_SEPOLICY_DIRS += hardware/oplus/sepolicy/qti/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += hardware/oplus/sepolicy/qti/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += hardware/oplus/sepolicy/qti/public
+
+include device/lineage/sepolicy/libperfmgr/sepolicy.mk
