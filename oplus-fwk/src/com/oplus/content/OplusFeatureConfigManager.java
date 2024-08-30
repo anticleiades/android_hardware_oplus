@@ -1,9 +1,16 @@
+/*
+ * Copyright (C) 2024 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 package com.oplus.content;
 
-import android.os.RemoteException;
+import android.text.TextUtils;
+
+import java.util.List;
 
 public class OplusFeatureConfigManager {
-    private static OplusFeatureConfigManager sInstance = null;
+    public static OplusFeatureConfigManager sInstance = null;
 
     public static OplusFeatureConfigManager getInstance() {
         if (sInstance == null) {
@@ -12,7 +19,7 @@ public class OplusFeatureConfigManager {
         return sInstance;
     }
 
-    public boolean hasFeature(String name) throws RemoteException {
-        return false;
+    public interface OnFeatureObserver {
+        default void onFeatureUpdate(List<String> features) {}
     }
 }
